@@ -15,7 +15,10 @@ $(document).ready(function(){
 
 	let TEMPO_ESPERA = 15000;
 	let tempo_atual = TEMPO_ESPERA/1000;
-	let local = window.location.href.split('8000')[0]+'8000/';
+	
+	//window.location.href.split('8000')[0]+'8000/';
+	let local = "https://exercicios-quimica.herokuapp.com/";
+	
 	let temaAt = {} // Tema atualmente selecionado
 	let questaoAt = 0;
 	let idTimeOut = 0;
