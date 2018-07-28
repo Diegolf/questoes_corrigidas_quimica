@@ -5,6 +5,7 @@ var app = express();
 var path = __dirname + "/";
 
 app.set('view engine', 'html');
+app.set('port', (process.env.PORT || 5000));
 nunjucks.configure((path+'views'), {
 	autoescape: true,
 	express: app
@@ -34,11 +35,13 @@ app.post('/teste', function(req, res){
 	});
 });
 
-var server = app.listen(8000, "127.0.0.1", function () {
+// app.listen(8000, "127.0.0.1", function () 
+var server = app.listen(app.get('port'), function () {
 
-	let host = server.address().address
-	let port = server.address().port
+	// let host = server.address().address;
+	let port = server.address().port;
 
-	console.log("Servidor escutando em: http://%s:%s", host, port)
+	// console.log("Servidor escutando em: http://%s:%s", host, port);
+	console.log("Servidor escutando na porta: %s", port);
 
 });
