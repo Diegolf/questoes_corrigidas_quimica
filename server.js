@@ -35,7 +35,7 @@ app.post('/teste', function(req, res){
 	});
 });
 
-// app.listen(8000, "127.0.0.1", function () 
+//var server = app.listen(5000, "127.0.0.1", function () {
 var server = app.listen(app.get('port'), function () {
 
 	// let host = server.address().address;

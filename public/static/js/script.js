@@ -16,7 +16,7 @@ $(document).ready(function(){
 	let TEMPO_ESPERA = 15000;
 	let tempo_atual = TEMPO_ESPERA/1000;
 	
-	//window.location.href.split('8000')[0]+'8000/';
+	//let local = window.location.href.split('5000')[0]+'5000/';
 	let local = "https://exercicios-quimica.herokuapp.com/";
 	
 	let temaAt = {} // Tema atualmente selecionado
@@ -84,8 +84,14 @@ $(document).ready(function(){
 					tm.addClass('desabilitado w3-dark-grey');
 					return;
 				}
-				dados = JSON.parse(dados.data);
-				
+				try{
+					dados = JSON.parse(dados.data);
+				}catch(e){
+					alert('Ocorreu um erro ao mudar de tema, tente novamente mais tarde.');
+					tm.addClass('desabilitado w3-dark-grey');
+					return;
+				}
+
 				// Setar o tema
 				$('#tema_s').html(dados['tema']);
 
@@ -112,8 +118,8 @@ $(document).ready(function(){
 				
 			},
 			error: function (e) {
-				console.log(e);
-				tm.attr('disabled');
+				alert('Ocorreu um erro ao mudar de tema, tente novamente mais tarde.');
+				tm.addClass('desabilitado w3-dark-grey');
 			},
 			type: 'POST',
 			data: JSON.stringify({'dados':tema}),
