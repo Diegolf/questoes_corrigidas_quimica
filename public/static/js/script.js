@@ -1,19 +1,6 @@
 $(document).ready(function(){
 
-	/* LIST TODO
-
-		- Estruturar as demais perguntas
-		- -> Fazer a paginação das perguntas
-			* Separar a função de mudar classe, para deixar os dados lidos como globais e criar uma função única para mudar
-			* Criar a função dos botões de paginação
-		- Adicionar o valor e a classe aos demais botões de temas
-		- Adicionar os devidos créditos
-		- Revisão visual (fontes, )
-		- Procurar por um host gratuito para hospedar
-		 
-	*/
-
-	let TEMPO_ESPERA = 15000;
+	let TEMPO_ESPERA = 1000;
 	let tempo_atual = TEMPO_ESPERA/1000;
 	
 	//let local = window.location.href.split('5000')[0]+'5000/';
