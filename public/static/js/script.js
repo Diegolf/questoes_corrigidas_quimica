@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	let TEMPO_ESPERA = 1000;
+	let TEMPO_ESPERA = 25000;
 	let tempo_atual = TEMPO_ESPERA/1000;
 	
 	//let local = window.location.href.split('5000')[0]+'5000/';
